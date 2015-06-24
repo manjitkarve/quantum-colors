@@ -1,4 +1,4 @@
-Quantum-Colors
+#Quantum-Colors
 
 ## Description
 Use the color palette from Google's [Material Design](http://www.google.com/design/spec/style/color.html#color-ui-color-palette) spec in your Sass projects.
