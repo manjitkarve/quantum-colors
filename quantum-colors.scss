@@ -1,0 +1,35 @@
+@import "material-swatches";
+
+@function createPalette($color-palette: $grey-pal, $ticks:(900, 700, 500, 300, 100)){
+    $palette-map: ();
+    $keys: (xdark, dark, base, light, xlight);
+    $count: 1;
+    @each $tick in $ticks {
+        $palette-map: map-merge($palette-map, (nth($keys, $count): map-get($color-palette, $tick)));
+    }
+
+    @return $palette-map;
+}
+
+@function xdark-pal($palette){
+    @return map-get($palette, xdark);
+}
+@function dark-pal($palette){
+    @return map-get($palette, dark);
+}
+@function base-pal($palette){
+    @return map-get($palette, base);
+}
+@function light-pal($palette){
+    @return map-get($palette, light);
+}
+@function xlight-pal($palette){
+    @return map-get($palette, xlight);
+}
+
+$grey1-pal: createPalette();
+$bgrey-pal: createPalette($blue-grey-pal);
+$primary: createPalette($cyan-pal);
+$secondary: createPalette($yellow-pal);
+$tertiary: createPalette($orange-pal);
+

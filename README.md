@@ -1,34 +1,29 @@
-[![Quantum Colors Logo](https://dl.dropboxusercontent.com/u/3106750/github/quantum-colors-logo.png)](https://github.com/nickpfisterer/quantum-colors/releases/latest)
-==============
+Quantum-Colors
 
+## Description
 Use the color palette from Google's [Material Design](http://www.google.com/design/spec/style/color.html#color-ui-color-palette) spec in your Sass projects.
 
-## Installation
-* Install via [Bower](http://bower.io) ```bower install quantum-colors --save```
-* [Download](https://github.com/nickpfisterer/quantum-colors) and add to your project manually
+## What it is
+Picked up the colors from https://github.com/nickpfisterer/quantum-colors 
+Added maps for individual color palettes
+Added functions to define palettes and retreive palette colors
 
 ## Usage
-Import Quantum Colors at the top of your Sass files. For example:
-
+Import "quantum-colors" into your sass file
 ```scss
-@import "../bower_components/quantum-colors/quantum-colors";
+@import "quantum-colors";
 ```
-
-With the exception of ```$black``` and ```$white```, all colors use the naming convention presented in the Material Design spec. For example, to use Red 500 as a background color:
-
+Modify it to define your palette instead of the cyan-yellow-orange palette currently defined.
 ```scss
-.my-red-thing {
-    background-color: $red-500;
+$primary: create-palette($blue-pal);
+```
+Use functions "xdark-pal", "dark-pal", "base-pal", "light-pal", "xlight-pal" to use colors in your project. For example:
+```scss
+.myHeader{
+    background-color: base-pal($primary);
 }
 ```
 
-That's all there is to it. If you find any bugs or have suggestions for a future version, please feel free to [submit an issue](https://github.com/nickpfisterer/quantum-colors/issues).
-
-## Changelog
-**v1.0.1** (10-01-2014):
-* Fix a bug with Amber A700
-
-**v1.0.0** (10-01-2014):
+## ChangeLog
+**v1.0.0** (06-25-2015):
 * First release
-* Bower support
-* Discoverable on [Sache](http://sache.in)
